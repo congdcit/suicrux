@@ -1,15 +1,6 @@
 {
 	"plugins": [
 		["lodash", {"id": ["lodash"]}],
-		[
-			"transform-runtime",
-			{
-				"helpers": false,
-				"polyfill": true,
-				"regenerator": true,
-				"moduleName": "babel-runtime"
-			}
-		],
 		"syntax-dynamic-import",
 		[
 			"babel-plugin-styled-components",
@@ -23,11 +14,11 @@
 			"env",
 			{
 				"targets": {
-					"browsers": ["last 2 versions", "> 1%"]
+					"browsers": ["ie 10", "last 2 versions"]
 				}
 			}
 		],
-		"stage-1",
+		"stage-0",
 		"react",
 		"flow"
 	],
@@ -36,7 +27,7 @@
 			"presets": ["react-optimize"]
 		},
 		"development": {
-			"plugins": ["react-hot-loader/babel"]
+			"plugins": ["react-hot-loader/babel", "dynamic-import-node"]
 		},
 		"test": {
 			"plugins": [
@@ -48,6 +39,7 @@
 						"alias": {
 							"actions": "./src/common/actions",
 							"api": "./src/common/api",
+							"app": "./src/common/app",
 							"components": "./src/common/components",
 							"containers": "./src/common/containers",
 							"reducers": "./src/common/reducers",
